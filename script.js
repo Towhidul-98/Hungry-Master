@@ -70,7 +70,7 @@ function ingredientDisplay(data){
         const li = document.createElement('li')
         const item = "strIngredient"+i;
         console.log(data[item])
-        if(data[item] == null){
+        if(data[item] === ''){
             break
         }else{
             li.innerText = data[item];
