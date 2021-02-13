@@ -13,8 +13,15 @@
 }
 .img-property{
     width : 100%;
-    height : auto;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-
+#ingredient img{
+    height: 200px
+}
+#ingredient{
+    width : 35%;
+    background-color: rgb(239, 245, 239);
+    margin : 40px auto;
+    text-align: left;
+}
