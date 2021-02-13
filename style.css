@@ -25,3 +25,12 @@
     margin : 40px auto;
     text-align: left;
 }
+#searchArea{
+    width: 40%;
+    margin-left: 37%;
+
+}
+#inputField{
+    font-size: 15px;
+}
+

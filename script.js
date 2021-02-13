@@ -33,11 +33,13 @@ const displayMealDetail = name => {
 
 const meals = name => {
     const mealArray = name.meals;
+    if (mealArray== null){
+        alert("Your Searched Item Is Not Found")
+    }
     const categoryBaseMeal=document.getElementById("categoryBaseMeal");
     const displayZone=document.getElementById("displayZone");
     displayZone.style.display="none";
     mealArray.forEach(element => {
-        //console.log(element.idMeal);
         const meal = document.createElement('div');
         meal.className= 'item';
         const displayMeal = `
@@ -58,8 +60,7 @@ function ingredient( id ){
 }
 
 function ingredientDisplay(data){
-    console.log(data);
-    const div = document.getElementById("ingredient")
+    const div = document.getElementById("ingredient");
     const element = `
         <img class="img-property" src="${data.strMealThumb}">
         <h2>${data.strMeal}</h2>
@@ -79,5 +80,14 @@ function ingredientDisplay(data){
     }
     div.innerHTML = element;
     div.appendChild(ul)
+}
 
+function randomInputCalls(){
+    const input = document.getElementById("inputField");
+    const inputValue = input.value;
+    const url2 = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`
+    fetch(url2)
+    .then( res => res.json())
+    .then( data => meals(data))
+    
 }
