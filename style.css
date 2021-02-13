@@ -1,21 +1,20 @@
-body{
-    background-color: seashell;
-}
-
-#displayZone{
+#categoryBaseMeal, #displayZone{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-gap : 15px;
-    width : 80%;
+    grid-gap : 20px;
+    width : 85%;
     margin : auto;
 }
 .item{
-    background-color: rgb(219, 207, 207);
+    background-color: rgba(143, 108, 108, 0.15);
     font-size: 20px;
-    border-radius: 10px;
-    padding : 5px;
+    border-radius: 20px;
     text-align: center;
 }
 .img-property{
-    width : 100%
+    width : 100%;
+    height : auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
+

@@ -24,5 +24,27 @@ function displayItems(meals){
 }
 
 const displayMealDetail = name => {
-    console.log(name.strCategory)
+    const url =`https://www.themealdb.com/api/json/v1/1/search.php?s=${name.strCategory}`
+    fetch(url)
+    .then( res => res.json())
+    .then( data => meals(data))
+   
+}
+
+const meals = name => {
+    const mealArray = name.meals;
+    const categoryBaseMeal=document.getElementById("categoryBaseMeal");
+    const displayZone=document.getElementById("displayZone");
+    displayZone.style.display="none";
+    mealArray.forEach(element => {
+        console.log(element.strMeal);
+        const meal = document.createElement('div');
+        meal.className= 'item';
+        const displayMeal = `
+             <img class="img-property" src="${element.strMealThumb}">
+             <h3>${element.strMeal}</h3>
+        `
+        meal.innerHTML=displayMeal;
+        categoryBaseMeal.appendChild(meal)
+    });
 }
